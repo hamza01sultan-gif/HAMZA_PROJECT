@@ -74,12 +74,12 @@ const GallerySection: React.FC<GallerySectionProps> = ({ isAdmin, data, onUpdate
   return (
     <Section id="gallery" title="معرض الصور والشهادات" Icon={ImageIcon}>
       <div className="max-w-4xl mx-auto">
-        <div className="relative h-96 md:h-[500px] w-full bg-gray-200 rounded-lg shadow-lg overflow-hidden">
-          <img src={data[currentIndex].src} alt={data[currentIndex].alt} className="w-full h-full object-contain" />
-          <button onClick={goToPrevious} className="absolute top-1/2 -translate-y-1/2 left-4 bg-white/70 rounded-full p-2 hover:bg-white text-gray-800 transition">
+        <div className="group relative h-96 md:h-[500px] w-full bg-slate-100 rounded-lg shadow-lg overflow-hidden border border-slate-200/80">
+          <img src={data[currentIndex].src} alt={data[currentIndex].alt} className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105" />
+          <button onClick={goToPrevious} className="absolute top-1/2 -translate-y-1/2 left-4 bg-white/70 rounded-full p-2 hover:bg-white text-slate-800 transition">
             <ChevronLeft size={28} />
           </button>
-          <button onClick={goToNext} className="absolute top-1/2 -translate-y-1/2 right-4 bg-white/70 rounded-full p-2 hover:bg-white text-gray-800 transition">
+          <button onClick={goToNext} className="absolute top-1/2 -translate-y-1/2 right-4 bg-white/70 rounded-full p-2 hover:bg-white text-slate-800 transition">
             <ChevronRight size={28} />
           </button>
           {isAdmin && (

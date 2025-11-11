@@ -46,7 +46,7 @@ const AchievementsSection: React.FC<AchievementsSectionProps> = ({ isAdmin, data
     <Section id="achievements" title="الإنجازات الأكاديمية" Icon={Award}>
       <div className="space-y-12">
         {data.map((item, index) => (
-          <div key={item.id} className="bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8 relative">
+          <div key={item.id} className="bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8 relative border border-slate-200/80">
             {isAdmin && (
               <button 
                 onClick={() => handleRemoveItem(index)}
@@ -64,10 +64,10 @@ const AchievementsSection: React.FC<AchievementsSectionProps> = ({ isAdmin, data
                 )}
             </div>
             <div className="w-full md:w-1/2">
-              <h3 className="text-2xl font-bold text-gray-800">
+              <h3 className="text-2xl font-bold text-slate-800">
                 <EditableField isAdmin={isAdmin} value={item.title} onChange={(e) => handleUpdateItem(index, 'title', e.target.value)} inputClassName="text-2xl"/>
               </h3>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-slate-600">
                 <EditableField isAdmin={isAdmin} value={item.description} onChange={(e) => handleUpdateItem(index, 'description', e.target.value)} as="textarea" />
               </p>
             </div>

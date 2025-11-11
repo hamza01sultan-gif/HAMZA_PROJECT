@@ -37,7 +37,7 @@ const VolunteerSection: React.FC<VolunteerSectionProps> = ({ isAdmin, data, onUp
     <Section id="volunteer" title="الأعمال التطوعية" Icon={HeartHandshake}>
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {data.map((item, index) => (
-          <div key={item.id} className="bg-white p-6 rounded-lg shadow-md relative">
+          <div key={item.id} className="bg-white p-6 rounded-lg shadow-md relative border border-slate-200/80">
             {isAdmin && (
                 <button 
                     onClick={() => handleRemoveItem(index)}
@@ -47,10 +47,10 @@ const VolunteerSection: React.FC<VolunteerSectionProps> = ({ isAdmin, data, onUp
                     <Trash2 size={18} />
                 </button>
             )}
-            <h3 className="text-xl font-bold text-gray-800">
+            <h3 className="text-xl font-bold text-slate-800">
                 <EditableField isAdmin={isAdmin} value={item.title} onChange={(e) => handleUpdateItem(index, 'title', e.target.value)} inputClassName="text-xl" />
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-slate-600">
                 <EditableField isAdmin={isAdmin} value={item.description} onChange={(e) => handleUpdateItem(index, 'description', e.target.value)} as="textarea" />
             </p>
           </div>

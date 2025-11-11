@@ -30,8 +30,8 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onClose, onSuccess }) => {
             <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-teal-100">
                 <Shield className="h-6 w-6 text-teal-600" />
             </div>
-            <h3 className="mt-4 text-2xl font-bold text-gray-900">دخول المسؤول</h3>
-            <p className="mt-2 text-sm text-gray-500">
+            <h3 className="mt-4 text-2xl font-bold text-slate-900">دخول المسؤول</h3>
+            <p className="mt-2 text-sm text-slate-500">
             الرجاء إدخال كلمة المرور للوصول لوضع التعديل.
             </p>
         </div>
@@ -46,7 +46,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onClose, onSuccess }) => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-teal-500 focus:border-teal-500 text-center"
+              className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-slate-500 text-slate-900 focus:outline-none focus:ring-teal-500 focus:border-teal-500 text-center"
               placeholder="كلمة المرور"
             />
           </div>

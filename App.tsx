@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   if (!isLoaded) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+      <div className="flex items-center justify-center min-h-screen bg-slate-50 text-slate-800">
         <p>جاري تحميل البيانات...</p>
       </div>
     );
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-slate-50 text-slate-800">
       <Header 
         isAdmin={isAdmin}
         onLoginClick={() => setShowLogin(true)}
@@ -81,7 +81,7 @@ const App: React.FC = () => {
           }}
         />
       )}
-      <footer className="text-center py-6 bg-gray-800 text-white mt-12">
+      <footer className="text-center py-6 bg-slate-900 text-slate-200 mt-12">
         <p>&copy; {new Date().getFullYear()} ملف إنجاز حمزه سلطان شطا. كل الحقوق محفوظة.</p>
       </footer>
     </div>
