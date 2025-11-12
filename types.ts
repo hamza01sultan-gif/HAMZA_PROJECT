@@ -42,6 +42,13 @@ export interface JourneyItem {
   summary: string;
 }
 
+export interface TestimonialItem {
+  id: string;
+  quote: string;
+  author: string;
+  authorTitle: string;
+}
+
 export interface PortfolioData {
   about: AboutData;
   education: EducationData;
@@ -50,4 +57,5 @@ export interface PortfolioData {
   volunteer: VolunteerItem[];
   gallery: GalleryItem[];
   journey: JourneyItem[];
+  testimonials: TestimonialItem[];
 }

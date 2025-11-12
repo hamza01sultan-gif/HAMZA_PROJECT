@@ -9,12 +9,13 @@ interface HeaderProps {
 
 const navLinks = [
   { href: '#about', label: 'نبذة عني' },
-  { href: '#education', label: 'التعليم' },
-  { href: '#achievements', label: 'الإنجازات' },
-  { href: '#skills', label: 'المهارات' },
-  { href: '#volunteer', label: 'التطوع' },
-  { href: '#gallery', label: 'المعرض' },
   { href: '#journey', label: 'رحلتي' },
+  { href: '#education', label: 'التعليم' },
+  { href: '#skills', label: 'المهارات' },
+  { href: '#achievements', label: 'الإنجازات' },
+  { href: '#gallery', label: 'المعرض' },
+  { href: '#volunteer', label: 'التطوع' },
+  { href: '#testimonials', label: 'قالوا عني' },
 ];
 
 const Header: React.FC<HeaderProps> = ({ isAdmin, onLoginClick, onLogoutClick }) => {
@@ -70,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ isAdmin, onLoginClick, onLogoutClick })
   return (
     <header className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#about" onClick={handleNavClick} className="text-2xl font-bold text-teal-600 cursor-pointer">ملف إنجاز حمزه 🧠✨</a>
           
           <nav className="hidden md:flex items-center space-x-reverse space-x-6">
@@ -99,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({ isAdmin, onLoginClick, onLogoutClick })
       </div>
       
       {/* Mobile Menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-white absolute top-20 right-0 left-0 shadow-lg`}>
+      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-white absolute top-16 right-0 left-0 shadow-lg`}>
         <nav className="flex flex-col items-center p-4">
           {navLinks.map(link => (
             <a key={link.href} href={link.href} onClick={handleNavClick} className="py-3 text-lg text-slate-600 hover:text-teal-600 transition-colors w-full text-center cursor-pointer">{link.label}</a>

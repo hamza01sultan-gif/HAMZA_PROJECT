@@ -37,14 +37,17 @@ const JourneySection: React.FC<JourneySectionProps> = ({ isAdmin, data, onUpdate
     <Section id="journey" title="رحلتي" Icon={Footprints}>
       <div className="max-w-4xl mx-auto relative">
         {/* Timeline Line */}
-        <div className="absolute left-1/2 h-full w-0.5 bg-teal-300 transform -translate-x-1/2"></div>
+        <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-teal-300 transform md:-translate-x-1/2"></div>
         
-        <div className="space-y-12">
+        <div className="space-y-8">
           {data.map((item, index) => (
-            <div key={item.id} className="relative">
-              <div className="md:flex items-center md:space-x-8">
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:text-left'}`}>
-                  <div className="bg-white p-6 rounded-lg shadow-lg relative border border-slate-200/80">
+            <div key={item.id} className="relative pl-10 md:pl-0">
+               {/* Dot */}
+              <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-slate-50 transform md:-translate-x-1/2"></div>
+
+              <div className={`md:flex items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                <div className="md:w-1/2">
+                  <div className={`bg-white p-6 rounded-lg shadow-lg relative border border-slate-200/80 md:mx-4 ${index % 2 !== 0 ? 'md:text-left' : ''}`}>
                     {isAdmin && (
                         <button 
                             onClick={() => handleRemoveItem(index)}
@@ -54,17 +57,16 @@ const JourneySection: React.FC<JourneySectionProps> = ({ isAdmin, data, onUpdate
                             <Trash2 size={18} />
                         </button>
                     )}
-                    <h3 className="text-xl font-bold text-teal-600">
-                        <EditableField isAdmin={isAdmin} value={item.semester} onChange={(e) => handleUpdateItem(index, 'semester', e.target.value)} inputClassName="text-xl"/>
+                    <h3 className={`text-xl font-bold text-teal-600`}>
+                        <EditableField isAdmin={isAdmin} value={item.semester} onChange={(e) => handleUpdateItem(index, 'semester', e.target.value)} inputClassName={`text-xl ${index % 2 !== 0 ? 'md:text-left' : ''}`}/>
                     </h3>
                     <p className="mt-2 text-slate-600">
-                        <EditableField isAdmin={isAdmin} value={item.summary} onChange={(e) => handleUpdateItem(index, 'summary', e.target.value)} as="textarea"/>
+                        <EditableField isAdmin={isAdmin} value={item.summary} onChange={(e) => handleUpdateItem(index, 'summary', e.target.value)} as="textarea" inputClassName={`${index % 2 !== 0 ? 'md:text-left' : ''}`} />
                     </p>
                   </div>
                 </div>
+                <div className="hidden md:block md:w-1/2"></div>
               </div>
-              {/* Timeline Dot */}
-              <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-slate-50 transform -translate-x-1/2 -translate-y-1/2"></div>
             </div>
           ))}
         </div>

@@ -22,7 +22,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isAdmin, data, onUpdate }) 
 
   return (
     <Section id="about" title="نبذة عني" Icon={User}>
-      <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div className="w-full md:w-1/3 flex-shrink-0">
           <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
              <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full transform -rotate-12"></div>

@@ -5,6 +5,7 @@ import EducationSection from './components/sections/EducationSection';
 import AchievementsSection from './components/sections/AchievementsSection';
 import SkillsSection from './components/sections/SkillsSection';
 import VolunteerSection from './components/sections/VolunteerSection';
+import TestimonialsSection from './components/sections/TestimonialsSection';
 import GallerySection from './components/sections/GallerySection';
 import JourneySection from './components/sections/JourneySection';
 import AdminLogin from './components/AdminLogin';
@@ -35,41 +36,46 @@ const App: React.FC = () => {
         onLoginClick={() => setShowLogin(true)}
         onLogoutClick={() => setIsAdmin(false)}
       />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
         <AboutSection 
           isAdmin={isAdmin}
           data={data.about}
           onUpdate={(value) => handleUpdate('about', value)}
+        />
+        <JourneySection
+          isAdmin={isAdmin}
+          data={data.journey}
+          onUpdate={(value) => handleUpdate('journey', value)}
         />
         <EducationSection 
           isAdmin={isAdmin}
           data={data.education}
           onUpdate={(value) => handleUpdate('education', value)}
         />
-        <AchievementsSection 
-          isAdmin={isAdmin}
-          data={data.achievements}
-          onUpdate={(value) => handleUpdate('achievements', value)}
-        />
         <SkillsSection 
           isAdmin={isAdmin}
           data={data.skills}
           onUpdate={(value) => handleUpdate('skills', value)}
         />
-        <VolunteerSection 
+        <AchievementsSection 
           isAdmin={isAdmin}
-          data={data.volunteer}
-          onUpdate={(value) => handleUpdate('volunteer', value)}
+          data={data.achievements}
+          onUpdate={(value) => handleUpdate('achievements', value)}
         />
         <GallerySection 
           isAdmin={isAdmin}
           data={data.gallery}
           onUpdate={(value) => handleUpdate('gallery', value)}
         />
-        <JourneySection
+        <VolunteerSection 
           isAdmin={isAdmin}
-          data={data.journey}
-          onUpdate={(value) => handleUpdate('journey', value)}
+          data={data.volunteer}
+          onUpdate={(value) => handleUpdate('volunteer', value)}
+        />
+        <TestimonialsSection 
+          isAdmin={isAdmin}
+          data={data.testimonials}
+          onUpdate={(value) => handleUpdate('testimonials', value)}
         />
       </main>
       {showLogin && (
